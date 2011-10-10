@@ -38,7 +38,7 @@ FB.Event.monitor('auth.statusChange', function(session) {
       });
     }
   }
-  else if (session === null) {
+  else if (session === undefined) {
     document.body.className = 'not_connected';
   
     clearAction();
