@@ -54,14 +54,14 @@ function setAction(msg, hideBackground) {
     document.getElementById('action').style.opacity = '.9';
   }
   
-  FB.$('msg').innerHTML = FB.String.escapeHTML(msg);
+  document.getElementById('msg').innerHTML = FB.String.escapeHTML(msg);
   
   window.scrollTo(0, 1);
 }
 
 //Clears the modal dialog
 function clearAction() {
-  FB.$('msg').innerHTML = '';
+  document.getElementById('msg').innerHTML = '';
   
   document.getElementById('action').style.display = 'none';
 }

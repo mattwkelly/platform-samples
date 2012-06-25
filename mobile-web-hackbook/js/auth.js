@@ -26,11 +26,11 @@ FB.Event.monitor('auth.statusChange', function(session) {
           console.log('Got the user\'s name and picture: ', response);
           
           //Update display of user name and picture
-          if (FB.$('user-name')) {
-            FB.$('user-name').innerHTML = user.name;
+          if (document.getElementById('user-name')) {
+            document.getElementById('user-name').innerHTML = user.name;
           }
-          if (FB.$('user-picture')) {
-            FB.$('user-picture').src = user.picture;
+          if (document.getElementById('user-picture')) {
+            document.getElementById('user-picture').src = user.picture;
           }
         }
         

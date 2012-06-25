@@ -40,9 +40,9 @@ function getUserBasicInfo() {
   var markup = '<div class="data-header">Your information:</div>';
   
   //Update display of user name and picture
-  if (FB.$('user-info')) {
+  if (document.getElementById('user-info')) {
     markup = markup + '<strong>User ID:</strong> ' + user.id + '<br />' + '<strong>Name:</strong> ' + user.name + '<br />' + '<strong>Profile picture URL:</strong> <a href="' + user.picture + '" target="_blank">' + user.picture + '</a><br />';
-    FB.$('user-info').innerHTML = markup;
+    document.getElementById('user-info').innerHTML = markup;
     
     clearAction();
   }
@@ -56,7 +56,7 @@ function getUserFriends() {
     markup = markup + '<img src="' + friendsInfo[i].picture + '">' + friendsInfo[i].name + '<br />';
   }
   
-  FB.$('user-friends').innerHTML = markup;
+  document.getElementById('user-friends').innerHTML = markup;
 }
 
 //Get the user's check-ins
@@ -69,7 +69,7 @@ function getCheckIns() {
     clearAction();
     
     if (!response.error) {
-      displayCheckIns(response.data, FB.$('checkins'));
+      displayCheckIns(response.data, document.getElementById('checkins'));
     }
   });
 }
@@ -157,7 +157,7 @@ function getNearby() {
       clearAction();
       console.log('Got some places near you: ', response);
       if (!response.error) {
-        displayPlaces(response.data, FB.$('locations-nearby'));
+        displayPlaces(response.data, document.getElementById('locations-nearby'));
       }
     });
   });
